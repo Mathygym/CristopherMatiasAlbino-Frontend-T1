@@ -9,28 +9,38 @@
 <body>
 <div class="container">
 
-  <div class="mt-5 mb-4">
-    <h1>Rueditas</h1>
+  <div class="mt-5 mb-4 text-center">
+    <h1 class="display-4 text-primary">🚗 Rueditas</h1>
   </div>
-  <div class="alert alert-success" role="alert" th:if="${buscarModel.codigo == '00'}">
-    Datos de la Placa
+
+  <div class="alert alert-success text-center" role="alert" th:if="${buscarModel.codigo == '00'}">
+    <strong>Datos de la Placa</strong>
   </div>
-  <div class="mb-3">
-    <span th:text="${buscarModel.marca}"></span>
+
+  <div class="card p-4 shadow-lg border-primary">
+
+    <div class="mb-3">
+      <strong>• Marca :</strong> <span class="text-info" th:text="${buscarModel.marca}"></span>
+    </div>
+    <div class="mb-3">
+      <strong>• Modelo :</strong> <span class="text-info" th:text="${buscarModel.modelo}"></span>
+    </div>
+    <div class="mb-3">
+      <strong>• Nro Asiento :</strong> <span class="text-info" th:text="${buscarModel.nroasiento}"></span>
+    </div>
+    <div class="mb-3">
+      <strong>• Precio :</strong> <span class="text-success fw-bold" th:text="${buscarModel.precio}"></span>
+    </div>
+    <div class="mb-3">
+      <strong>• Color :</strong> <span class="badge bg-secondary" th:text="${buscarModel.color}"></span>
+    </div>
   </div>
-  <div class="mb-3">
-    <span th:text="${buscarModel.modelo}"></span>
+
+  <div class="d-grid mt-4">
+    <button  type="button" class="btn btn-outline-primary btn-lg" onclick="window.location.href='/login/inicio'">🔙 Regresar</button>
   </div>
-  <div class="mb-3">
-    <span th:text="${buscarModel.nroasiento}"></span>
-  </div>
-  <div class="mb-3">
-    <span th:text="${buscarModel.precio}"></span>
-  </div>
-  <div class="mb-3">
-    <span th:text="${buscarModel.color}"></span>
-  </div>
-  </div>
+
+</div>
 
 </body>
 </html>

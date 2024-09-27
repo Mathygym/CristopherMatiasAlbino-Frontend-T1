@@ -8,28 +8,36 @@
 </head>
 <body>
 
-<div class="container">
-  <form th:action="@{/login/buscar}" method="post">
+<div class="container mt-5">
+  <form th:action="@{/login/buscar}" method="post" class="shadow-lg p-4 rounded bg-light">
 
-    <div class="mt-5 mb-4">
-      <h1>Rueditas</h1>
+    <!-- Título -->
+    <div class="text-center mb-4">
+      <h1 class="display-4 text-primary">🚗 Rueditas</h1>
+      <p class="lead">Consulta la información de tu vehículo</p>
     </div>
-    <div class="alert alert-danger" role="alert" th:if="${buscarModel.codigo !='00'}">
+
+    <!-- Alerta de error -->
+    <div class="alert alert-danger text-center" role="alert" th:if="${buscarModel.codigo !='00'}">
       <span th:text="${buscarModel.mensaje}"></span>
     </div>
 
-    <div class="mb-3">
-      <h3>Ingrese una Placa</h3>
+    <!-- Título del campo -->
+    <div class="mb-3 text-center">
+      <h3 class="text-secondary">Ingrese una Placa</h3>
     </div>
-    <div class="mb-3">
-      <input type="text" id="placa" name="placa" placeholder="Numero de placa"
-             class="form-select form-select-lg">
+
+    <!-- Input para la placa -->
+    <div class="mb-4">
+      <input type="text" id="placa" name="placa" placeholder="Número de placa"
+             class="form-control form-control-lg shadow-sm" required>
     </div>
+
+    <!-- Botón de búsqueda -->
     <div class="d-grid">
-      <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
+      <button type="submit" class="btn btn-primary btn-lg">🔍 Buscar</button>
     </div>
   </form>
-
 </div>
 
 
